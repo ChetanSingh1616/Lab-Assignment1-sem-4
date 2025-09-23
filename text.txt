@@ -1,0 +1,7 @@
+Computers don’t lie; they just repeat our mistakes faster.
+File I/O should never freeze your app.
+Asynchronous Node keeps the event loop breathing.
+Non-blocking reads let other tasks run.
+Promises or callbacks—pick one and be consistent.
+Good code is readable; great code is predictable.
+Ship it, then make it better.
