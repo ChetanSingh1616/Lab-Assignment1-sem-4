@@ -1,5 +1,5 @@
 // reader.js — non-blocking file read with fs/promises
-const { readFile } = require('node:fs/promises');
+const { readFile } = require('node:fs');
 const path = require('node:path');
 
 (async () => {
