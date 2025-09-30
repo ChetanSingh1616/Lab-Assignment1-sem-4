@@ -1,14 +1,14 @@
-// reader.js — non-blocking file read with fs/promises
-const { readFile } = require('node:fs');
+// reader.js — non-blocking file read (callback style)
+const fs = require('node:fs');
 const path = require('node:path');
 
-(async () => {
-  try {
-    const filePath = path.join(__dirname, 'text.txt'); // keep files together
-    const data = await readFile(filePath, 'utf8');     // non-blocking
-    console.log(data);
-  } catch (err) {
-    console.error('Error reading file:', err.message);
+const filePath = path.join(__dirname, 'text.txt');
+
+fs.readFile(filePath, 'utf8', (err, data) => {
+  if (err) {
+    console.error('read error:', err.message);
     process.exit(1);
   }
-})();
+  // Print the file content as-is (trim trailing newlines to keep console tidy)
+  console.log(data.trimEnd());
+});
